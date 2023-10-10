@@ -1,0 +1,16 @@
+﻿@model CalcModel
+
+@{
+    ViewBag.Title = "電卓;
+}
+
+<h2>電卓</h2>
+
+@using (Html.BeginForm("Calculate", "Calculator", FormMethod.Post))
+{
+    <input type="text" name="number1" placeholder="数値1" />
+    <input type="text" name="number2" placeholder="数値2" />
+    <input type="submit" value="計算" />
+}
+
+<p>結果: @Model.Result</p>
