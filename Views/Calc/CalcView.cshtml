@@ -1,16 +1,28 @@
 ﻿@model CalcModel
 
 @{
-    ViewBag.Title = "電卓;
+    ViewBag.Title = "電卓";
 }
 
 <h2>電卓</h2>
 
-@using (Html.BeginForm("Calculate", "Calculator", FormMethod.Post))
+@using (Html.BeginForm("Calculate", "CalcController", FormMethod.Post))
 {
-    <input type="text" name="number1" placeholder="数値1" />
-    <input type="text" name="number2" placeholder="数値2" />
+    <input asp-for="number1" placeholder="数値1" />
+    <input asp-for="number2" placeholder="数値2" />
+    <select name="operation">
+        <option value = "Add">＋</option>
+        <option value = "Subtract">－</option>
+        <option value = "Multiply">×</option>
+        <option value = "Divide">÷</option>
+    </select>
     <input type="submit" value="計算" />
 }
-
-<p>結果: @Model.Result</p>
+@if (Model.result != null)
+{
+    <p>結果: @Model.result</p>
+}
+else
+{
+    <p>結果：計算結果がありません。</p>
+}

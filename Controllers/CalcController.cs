@@ -1,5 +1,4 @@
 ﻿using CalculatorWebApp.Models;
-using CalculatorWebApp.Views.Calc;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
 
@@ -8,37 +7,43 @@ namespace CalculatorWebApp.Controllers
     public class CalcController : Controller
     {
         private CalcModel calcModel;
-        private CalcView calcView;
+              
 
-        public CalcController(CalcModel calcModel, CalcView calcView)
+        public CalcController(CalcModel calcModel)
         {
             this.calcModel = calcModel;
-            this.calcView = calcView;
+          
         }
 
-        public void PerformCalc(double a, double b, string operation)
+        public IActionResult CalcView()
         {
-            double results = 0;
+            return View("CalcView");
+        }
 
+        public IActionResult Calculate(CalcModel calcModel, string operation)
+        {
             switch (operation)
             {
                 case "Add":
-                    results = a + b;
+                    calcModel.Add();
                     break;
+
                 case "Subtract":
-                    results = a - b;
+                    calcModel.Subtarct(); 
                     break;
+
                 case "Multiply":
-                    results = a * b;
+                    calcModel.Multiply();
                     break;
+
                 case "Divide":
-                    results = a / b;
+                    calcModel.Divide();
                     break;
-                default:
-                    throw new NotImplementedException();
-                    
+
+                default: 
+                    throw new NotImplementedException();                      
             }
-            //calcView.DisplayResult(results);
+            return View("CalcView");
         }
     }
 }

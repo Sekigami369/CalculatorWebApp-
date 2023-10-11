@@ -2,29 +2,46 @@
 {
     public class CalcModel
     {
-        public double Add(double a, double b)
+        public double number1 { get; set; }
+        public double number2 { get; set; }
+        public double result { get; set; }
+
+
+        public void Add()
         {
             //足し算
-            return a + b;
+            result = number1 + number2;
             
         }
 
-        public double Subtarct(double a, double b)
+        public void Subtarct()
         {
             //引き算
-            return a - b;
+            result = number1 - number2;
+            
         }
+    
 
-        public double Multiply(double a, double b)
+        public void Multiply()
         {
             //掛け算
-            return a * b;
+            result = number1 * number2;
+            
         }
 
-        public double Divide(double a, double b)
+        public void Divide()
         {
-            //割り算
-            return a / b;
+            if(number2 != 0)
+            {
+                //割り算
+                result = number1 / number2;
+            }
+            else
+            {
+                result = double.NaN;
+            }
+            
+            
         }
 
 
