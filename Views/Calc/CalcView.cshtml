@@ -1,10 +1,8 @@
 ﻿@model CalcModel
-
 @{
-    ViewBag.Title = "電卓";
+    ViewData["Title"] = "Calculator";
 }
-
-<h2>電卓</h2>
+<h1>@ViewData["Title"]</h1>
 
 @using (Html.BeginForm("Calculate", "CalcController", FormMethod.Post))
 {

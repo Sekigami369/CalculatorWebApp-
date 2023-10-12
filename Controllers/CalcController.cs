@@ -6,18 +6,21 @@ namespace CalculatorWebApp.Controllers
 {
     public class CalcController : Controller
     {
+
+        private readonly ILogger<CalcController> logger;
+
         private CalcModel calcModel;
               
 
-        public CalcController(CalcModel calcModel)
+        public CalcController(CalcModel calcModel, ILogger<CalcController> logger)
         {
             this.calcModel = calcModel;
-          
+            this.logger = logger;
         }
 
         public IActionResult CalcView()
         {
-            return View("CalcView");
+            return View();
         }
 
         public IActionResult Calculate(CalcModel calcModel, string operation)
@@ -43,7 +46,7 @@ namespace CalculatorWebApp.Controllers
                 default: 
                     throw new NotImplementedException();                      
             }
-            return View("CalcView");
+            return View();
         }
     }
 }
