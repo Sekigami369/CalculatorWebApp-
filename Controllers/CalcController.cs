@@ -10,8 +10,7 @@ namespace CalculatorWebApp.Controllers
         private readonly ILogger<CalcController> logger;
 
         private CalcModel calcModel;
-              
-
+       
         public CalcController(CalcModel calcModel, ILogger<CalcController> logger)
         {
             this.calcModel = calcModel;
@@ -23,29 +22,31 @@ namespace CalculatorWebApp.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult Calculate(string operation)
         {
             switch (operation)
             {
                 case "Add":
-                    calcModel.Add();
+                    calcModel.result = calcModel.Add();
                     break;
 
                 case "Subtract":
-                    calcModel.Subtarct(); 
+                    calcModel.result = calcModel.Subtarct(); 
                     break;
 
                 case "Multiply":
-                    calcModel.Multiply();
+                    calcModel.result = calcModel.Multiply();
                     break;
 
                 case "Divide":
-                    calcModel.Divide();
+                    calcModel.result = calcModel.Divide();
                     break;
 
                 default: 
                     throw new NotImplementedException();                      
             }
+            
             return View();
         }
     }

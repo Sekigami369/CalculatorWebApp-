@@ -6,45 +6,44 @@
         public double number2 { get; set; }
         public double result { get; set; }
 
+        double calcAns = 0;
 
-        public void Add()
+        public double Add()
         {
             //足し算
             result = number1 + number2;
             
+            return result;
         }
 
-        public void Subtarct()
+        public double Subtarct()
         {
             //引き算
             result = number1 - number2;
-            
+            return result;            
         }
     
 
-        public void Multiply()
+        public double Multiply()
         {
             //掛け算
             result = number1 * number2;
-            
+            return result;            
         }
 
-        public void Divide()
+        public double Divide()
         {
             if(number2 != 0)
             {
                 //割り算
                 result = number1 / number2;
+                return result;
             }
             else
             {
                 result = double.NaN;
+                return result;
             }
-            
-            
         }
-
-
-
     }
 }
