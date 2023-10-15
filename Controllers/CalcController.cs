@@ -23,7 +23,7 @@ namespace CalculatorWebApp.Controllers
             return View();
         }
 
-        public IActionResult Calculate(CalcModel calcModel, string operation)
+        public IActionResult Calculate(string operation)
         {
             switch (operation)
             {
