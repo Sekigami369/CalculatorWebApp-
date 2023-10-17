@@ -28,19 +28,28 @@ namespace CalculatorWebApp.Controllers
             switch (operation)
             {
                 case "Add":
-                    calcModel.result = calcModel.Add();
+                    //calcModel.result = calcModel.Add();
+                    calcModel.Add();
+                    //calcModel.Getresult();
                     break;
 
                 case "Subtract":
-                    calcModel.result = calcModel.Subtarct(); 
+                    calcModel.Subtrarct();
+                    //calcModel.Getresult();
+
+                    //calcModel.result = calcModel.Subtarct(); 
                     break;
 
                 case "Multiply":
-                    calcModel.result = calcModel.Multiply();
+                    calcModel.Multiply();
+                    //calcModel.Getresult();
+                    //calcModel.result = calcModel.Multiply();
                     break;
 
                 case "Divide":
-                    calcModel.result = calcModel.Divide();
+                    calcModel.Divide();
+                    //calcModel.Getresult();
+                    //calcModel.result = calcModel.Divide();
                     break;
 
                 default: 

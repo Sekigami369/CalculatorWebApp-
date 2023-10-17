@@ -8,21 +8,21 @@
 {
     <input asp-for="number1" placeholder="数値1" />
     <input asp-for="number2" placeholder="数値2" />
+
     <select name="operation">
         <option value = "Add">＋</option>
         <option value = "Subtract">－</option>
         <option value = "Multiply">×</option>
         <option value = "Divide">÷</option>
     </select>
+
     <input type="submit" value="計算" />
 }
 
-@if (Model.result != null)
-{
     <input type="text" asp-for="result" readonly />
-}
+@*
 else
-{
-    
+{    
     <p>計算結果がありません。</p>
 }
+*@
