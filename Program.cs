@@ -29,8 +29,11 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name:"defalt",
     pattern: "{controller=Calc}/{action=CalcView}/{id?}");
-//name: "defalt",
-//pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapControllerRoute(
+    name: "Calculate",
+    pattern: "CalcController/Calculate",
+    defaults: new { Controller = "CalcController", action = "Calculate" }
+    );
 
 app.Run();
