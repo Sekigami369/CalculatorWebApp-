@@ -32,8 +32,9 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "Calculate",
-    pattern: "CalcController/Calculate",
-    defaults: new { Controller = "CalcController", action = "Calculate" }
+    pattern: "Calc/Calculate",
+    //pattern: "{controller=CalcController}/{action=Calculate}",
+    defaults: new { Controller = "Calc", action = "Calculate" }
     );
 
 app.Run();
