@@ -23,6 +23,7 @@ namespace CalculatorWebApp.Controllers
         }
 
         [HttpPost]
+        [Route("Calculate")]
         public IActionResult Calculate(string operation)
         {
             switch (operation)

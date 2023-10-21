@@ -1,10 +1,13 @@
 using CalculatorWebApp.Models;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+
+    //ˆË‘¶«‚ğ’“ü‚µ‚Ä‚¢‚é
 builder.Services.AddTransient<CalcModel>();
 
 var app = builder.Build();
@@ -33,8 +36,16 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "Calculate",
     pattern: "Calc/Calculate",
-    //pattern: "{controller=CalcController}/{action=Calculate}",
-    defaults: new { Controller = "Calc", action = "Calculate" }
+    defaults: new { Controller = "CalcController", action = "Calculate" }
     );
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
+        name: "CalculateRoute",
+        pattern: "Calc/Calculate",
+        defaults: new { controller = "CalcController", action = "Calculate" }
+        );
+});
 
 app.Run();
