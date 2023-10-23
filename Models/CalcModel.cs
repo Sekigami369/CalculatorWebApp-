@@ -5,24 +5,14 @@
         public double number1 { get; set; }
         public double number2 { get; set; }
 
-        public double result = 0;
-        public double Getresult()
-        {
-            return result;
-        }
-
-        private void Setresult(double result)
-        {
-            this.result = result;
-        }
+        public double result { get; set; }
+              
 
 
         public void Add()
         {
             //足し算
-            result = number1 + number2;
-
-            Setresult(result);
+            this.result = number1 + number2;            
         }
 
         public void Subtrarct()
@@ -31,9 +21,7 @@
             /*result = number1 - number2;
             return result;            
             */
-            result = number1 - number2;
-
-            Setresult(result);
+            this.result = number1 - number2;            
         }
     
 
@@ -44,9 +32,7 @@
             result = number1 * number2;
             return result;            
             */
-            result = number1 * number2;
-
-            Setresult(result);
+            this.result = number1 * number2;
         }
 
         public void Divide()
@@ -58,9 +44,7 @@
                 result = number1 / number2;
                 return result;
                 */
-                result = number1 / number2;
-
-                Setresult(result);
+                this.result = number1 / number2;
             }
             else
             {
@@ -68,9 +52,7 @@
                 result = double.NaN;
                 return result;
                 */
-                result = double.NaN;
-
-                Setresult(result);
+                this.result = double.NaN;
             }
         }
     }

@@ -23,40 +23,38 @@ namespace CalculatorWebApp.Controllers
         }
 
         [HttpPost]
-        [Route("Calculate")]
         public IActionResult Calculate(string operation)
         {
             switch (operation)
             {
                 case "Add":
-                    calcModel.Add();
-                    //calcModel.result = calcModel.Add();                    
-                    //calcModel.Getresult();
+                    
+                    calcModel.Add();                    
+                    
                     break;
 
                 case "Subtract":
-                    calcModel.Subtrarct();
-                    //calcModel.Getresult();
-                    //calcModel.result = calcModel.Subtarct(); 
+                    
+                    
+                    calcModel.Subtrarct(); 
                     break;
 
                 case "Multiply":
+                    
                     calcModel.Multiply();
-                    //calcModel.Getresult();
-                    //calcModel.result = calcModel.Multiply();
                     break;
 
                 case "Divide":
+                    
+                    
                     calcModel.Divide();
-                    //calcModel.Getresult();
-                    //calcModel.result = calcModel.Divide();
                     break;
 
                 default: 
                     throw new NotImplementedException();                      
             }
             
-            return View();
+            return View("CalcView", calcModel);
         }
     }
 }

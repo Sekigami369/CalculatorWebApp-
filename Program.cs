@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
     //ˆË‘¶«‚ğ’“ü‚µ‚Ä‚¢‚é
-builder.Services.AddTransient<CalcModel>();
+//builder.Services.AddTransient<CalcModel>();
+builder.Services.AddSingleton<CalcModel>();
 
 var app = builder.Build();
 
@@ -35,17 +36,8 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "Calculate",
-    pattern: "Calc/Calculate",
+    pattern: "CalcController/Calculate",
     defaults: new { Controller = "CalcController", action = "Calculate" }
     );
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllerRoute(
-        name: "CalculateRoute",
-        pattern: "Calc/Calculate",
-        defaults: new { controller = "CalcController", action = "Calculate" }
-        );
-});
 
 app.Run();

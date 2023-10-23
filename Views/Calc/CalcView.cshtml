@@ -4,7 +4,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-@using (Html.BeginForm("Calculate", "CalcController", FormMethod.Post))
+@using (Html.BeginForm("Calculate", "Calc", FormMethod.Post))
 {
     <input asp-for="number1" placeholder="数値1" />
     <input asp-for="number2" placeholder="数値2" />
