@@ -1,8 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@model CalcModel
+@{
+    ViewData["Title"] = "Calculator";
 }
-
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<h1>@ViewData["Title"]</h1>
+
+@using (Html.BeginForm("Calculate", "Calc", FormMethod.Post))
+{
+    <input asp-for="number1" placeholder="数値1" />
+    <input asp-for="number2" placeholder="数値2" />
+
+    <select name="operation">
+        <option value="Add">＋</option>
+        <option value="Subtract">－</option>
+        <option value="Multiply">×</option>
+        <option value="Divide">÷</option>
+    </select>
+
+    <input type="submit" value="計算" />
+}
+
+<input type="text" asp-for="result" readonly />

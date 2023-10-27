@@ -23,7 +23,7 @@ namespace CalculatorWebApp.Controllers
             return View();
         }
         
-        public IActionResult Calc()
+        public IActionResult CalcView()
         {
             return View();
         }
