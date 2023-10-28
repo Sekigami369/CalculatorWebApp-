@@ -32,7 +32,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name:"defalt",
-    pattern: "{controller=Calc}/{action=CalcView}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "Calculate",

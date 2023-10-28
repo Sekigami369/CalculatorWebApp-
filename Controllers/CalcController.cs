@@ -17,7 +17,7 @@ namespace CalculatorWebApp.Controllers
             this.logger = logger;
         }
 
-        public IActionResult CalcView()
+        public IActionResult Index()
         {
             return View();
         }
@@ -54,7 +54,7 @@ namespace CalculatorWebApp.Controllers
                     throw new NotImplementedException();                      
             }
             
-            return View("CalcView", calcModel);
+            return View("Index", calcModel);
         }
     }
 }
